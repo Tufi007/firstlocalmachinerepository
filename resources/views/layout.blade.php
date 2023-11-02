@@ -1,53 +1,16 @@
-<div>
-    <!-- Breathing in, I calm body and mind. Breathing out, I smile. - Thich Nhat Hanh -->
-</div>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/signup.css')}}">
-    <style>
-
-    </style>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>layoutpage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <title>@yield('title')</title>
 </head>
-
-<!------ Include the above in your HEAD tag ---------->
-
-<form>
-    <label>
-        <p class="label-txt">ENTER YOUR EMAIL</p>
-        <input type="text" class="input">
-        <div class="line-box">
-            <div class="line"></div>
-        </div>
-    </label>
-    <label>
-        <p class="label-txt">ENTER YOUR NAME</p>
-        <input type="text" class="input">
-        <div class="line-box">
-            <div class="line"></div>
-        </div>
-    </label>
-    <label>
-        <p class="label-txt">ENTER YOUR PASSWORD</p>
-        <input type="text" class="input">
-        <div class="line-box">
-            <div class="line"></div>
-        </div>
-    </label>
-    <button type="submit">submit</button>
-</form>
-<script src="{{asset('js/signup.js')}}"></script>
 <body>
-
-
+@includeIf('header')
+@yield('body')
+@includeIf('footer')
 </body>
-
 </html>
