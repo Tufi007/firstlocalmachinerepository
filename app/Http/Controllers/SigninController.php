@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use illuminate\support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class SigninController extends Controller
@@ -13,6 +13,8 @@ class SigninController extends Controller
         ]);
         if ($check) {
             if(auth()->attempt($request->only('email','password'))){
+                $user= Auth::user();
+                Auth::login($user);
                 return redirect('home');
             }
             else{
@@ -22,5 +24,12 @@ class SigninController extends Controller
     }
     else{
         return redirect()->back();
-    }}}
+    }}
+    function logout(Request $r){
+
+        auth()->logout();
+
+        return redirect('signin');
+    }
+}
 
